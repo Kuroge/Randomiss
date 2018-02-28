@@ -39,7 +39,7 @@ namespace Randomiss
         private void randomiss_Click(object sender, RoutedEventArgs e)
         {
             Generator password = new Generator(Convert.ToInt32(number.Text), Convert.ToInt32(length.Text));
-            output.Text = password.GetData().ToString();
+            output.Text = string.Join("\n", password.GetData());
         }
     }
 }
