@@ -21,10 +21,19 @@ namespace Randomiss
             this.Connection = SetConnection();
         }
 
-        public string[] GetData()
+        public List<string> GetData()
         {
             var rawData = Connection.DocumentNode.SelectNodes("//pre[@class='data']").FirstOrDefault();
-            return rawData.InnerText.Split('\n');
+            List<string> filteredData = new List<string>();
+            foreach (var item in rawData.InnerText.Split('\n'))
+            {
+                if (!(string.IsNullOrWhiteSpace(item.ToString())))
+                {
+                    filteredData.Add(item);
+                }
+            }
+
+            return filteredData;
         }
         
         private HtmlAgilityPack.HtmlDocument SetConnection()
