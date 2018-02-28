@@ -1,0 +1,19 @@
+﻿<Controls:MetroWindow x:Class="Randomiss.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Randomiss"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Title="Randomiss" Height="350" Width="525">
+    <Grid>
+        <TextBox x:Name="number" Controls:TextBoxHelper.Watermark="Number of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,46,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="number_TextChanged" />
+        <TextBox x:Name="length" IsEnabled="False" Controls:TextBoxHelper.Watermark="Length of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,77,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="length_TextChanged" />
+        <Button x:Name="randomiss"  IsEnabled="False" Content="Randomiss!" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top" Width="135" Click="randomiss_Click"/>
+        <TextBox x:Name="output" IsReadOnly="True" HorizontalAlignment="Left" Height="238" Margin="302,46,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="168"/>
+    </Grid>
+</Controls:MetroWindow>
