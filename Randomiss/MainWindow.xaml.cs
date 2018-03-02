@@ -30,5 +30,16 @@
             Generator password = new Generator(Convert.ToInt32(number.Text), Convert.ToInt32(length.Text));
             output.Text = string.Join("\n", password.GetData());
         }
+
+        private void output_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            clipboard.Visibility = Visibility.Visible;
+        }
+
+        private void clipboard_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(output.Text.Replace("\n", "\r\n"));
+            clip_text.Content = "Copied to clipboard! :)";
+        }
     }
 }
