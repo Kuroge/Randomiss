@@ -1,21 +1,10 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace Randomiss
+﻿namespace Randomiss
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using MahApps.Metro.Controls;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,20 +12,20 @@ namespace Randomiss
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void number_TextChanged(object sender, TextChangedEventArgs e)
+        private void Number_TextChanged(object sender, TextChangedEventArgs e)
         {
             length.IsEnabled = true;
         }
 
-        private void length_TextChanged(object sender, TextChangedEventArgs e)
+        private void Length_TextChanged(object sender, TextChangedEventArgs e)
         {
             randomiss.IsEnabled = true;
         }
 
-        private void randomiss_Click(object sender, RoutedEventArgs e)
+        private void Randomiss_Click(object sender, RoutedEventArgs e)
         {
             Generator password = new Generator(Convert.ToInt32(number.Text), Convert.ToInt32(length.Text));
             output.Text = string.Join("\n", password.GetData());

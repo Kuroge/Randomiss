@@ -11,9 +11,9 @@
         ResizeMode="CanMinimize"
         Title="Randomiss" Height="350" Width="525">
     <Grid>
-        <TextBox x:Name="number" Controls:TextBoxHelper.Watermark="Number of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,46,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="number_TextChanged" />
-        <TextBox x:Name="length" IsEnabled="False" Controls:TextBoxHelper.Watermark="Length of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,77,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="length_TextChanged" />
-        <Button x:Name="randomiss"  IsEnabled="False" Content="Randomiss!" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top" Width="135" Click="randomiss_Click"/>
+        <TextBox x:Name="number" Controls:TextBoxHelper.Watermark="Number of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,46,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="Number_TextChanged" />
+        <TextBox x:Name="length" IsEnabled="False" Controls:TextBoxHelper.Watermark="Length of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,77,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="Length_TextChanged" />
+        <Button x:Name="randomiss"  IsEnabled="False" Content="Randomiss!" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top" Width="135" Click="Randomiss_Click"/>
         <TextBox x:Name="output" IsReadOnly="True" HorizontalAlignment="Left" Height="238" Margin="302,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
     </Grid>
 </Controls:MetroWindow>

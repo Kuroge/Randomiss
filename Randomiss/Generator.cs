@@ -1,33 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Randomiss
+﻿namespace Randomiss
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Generator
     {
+        public Generator(int num, int length)
+        {
+            this.Num = num;
+            this.Length = length;
+            this.Connection = this.SetConnection();
+        }
+
         public int Num { get; set; }
 
         public int Length { get; set; }
 
         private HtmlAgilityPack.HtmlDocument Connection { get; set; }
 
-        public Generator(int num, int length)
-        {
-            this.Num = num;
-            this.Length = length;
-            this.Connection = SetConnection();
-        }
-
         public List<string> GetData()
         {
-            var rawData = Connection.DocumentNode.SelectNodes("//pre[@class='data']").FirstOrDefault();
+            var rawData = this.Connection.DocumentNode.SelectNodes("//pre[@class='data']").FirstOrDefault();
             List<string> filteredData = new List<string>();
             foreach (var item in rawData.InnerText.Split('\n'))
             {
-                if (!(string.IsNullOrWhiteSpace(item.ToString())))
+                if (!string.IsNullOrWhiteSpace(item.ToString()))
                 {
                     filteredData.Add(item);
                 }
@@ -41,7 +38,6 @@ namespace Randomiss
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.random.org/strings/?num=" + this.Num + "&len=" + this.Length + "&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new");
             return doc;
-
         }
     }
 }
