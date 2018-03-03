@@ -15,20 +15,27 @@
         <TextBox x:Name="length" IsEnabled="False" Controls:TextBoxHelper.Watermark="Length of items" Controls:TextBoxHelper.ClearTextButton="True" Margin="37,77,0,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" TextChanged="Length_TextChanged" />
         <Button x:Name="randomiss"  IsEnabled="False" Content="Randomiss!" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top" Width="135" Click="Randomiss_Click"/>
         <TextBox x:Name="output" IsReadOnly="True" HorizontalAlignment="Left" Height="238" Margin="302,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" TextChanged="output_TextChanged"/>
-        <Button x:Name="clipboard" Visibility="Hidden" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Height="36" Margin="302,248,0,0" VerticalAlignment="Top" Width="168" Click="clipboard_Click">
-            <StackPanel Orientation="Horizontal">
-                <Rectangle Width="15"
+        <Controls:SplitButton x:Name="clipboard" 
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Left"
+            VerticalContentAlignment="Center"
+            Width="168"
+            SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+            ItemsSource="{Binding CopyType}"
+            VerticalAlignment="Top" Margin="302,248,0,0" Height="36" Click="clipboard_Click"
+            Visibility="Hidden">
+            <Controls:SplitButton.IconTemplate>
+                <DataTemplate>
+                    <Rectangle Width="15"
                    Height="20"
                    Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
-                    <Rectangle.OpacityMask>
-                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_clipboard_variant}" />
-                    </Rectangle.OpacityMask>
-                </Rectangle>
-                <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="copy to clipboard" />
-            </StackPanel>
-        </Button>
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_clipboard_variant}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </DataTemplate>
+            </Controls:SplitButton.IconTemplate>
+        </Controls:SplitButton>
         <Label x:Name="clip_text" HorizontalAlignment="Left" Height="22" Margin="335,289,0,0" VerticalAlignment="Top" Width="102" FontSize="10"/>
     </Grid>
     <Controls:MetroWindow.RightWindowCommands>
