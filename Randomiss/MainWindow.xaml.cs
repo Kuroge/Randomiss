@@ -41,5 +41,10 @@
             Clipboard.SetText(output.Text.Replace("\n", "\r\n"));
             clip_text.Content = "Copied to clipboard! :)";
         }
+
+        private void github_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Kuroge/Randomiss");
+        }
     }
 }

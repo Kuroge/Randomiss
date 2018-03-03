@@ -31,4 +31,19 @@
         </Button>
         <Label x:Name="clip_text" HorizontalAlignment="Left" Height="22" Margin="335,289,0,0" VerticalAlignment="Top" Width="102" FontSize="10"/>
     </Grid>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="github" Click="github_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="30"
+                   Height="25"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_github}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
 </Controls:MetroWindow>
